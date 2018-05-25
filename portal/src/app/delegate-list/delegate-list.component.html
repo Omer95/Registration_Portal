@@ -1,0 +1,24 @@
+<div class="delegate-list" [formGroup]="delegationForm" style="padding: 0px; margin: 0px;">
+    
+        <div formArrayName="delegates" style="padding: 0px; margin: 0px;">
+            <!-- Delegate forms being loaded here-->
+            <div *ngFor="let delegate of delegates; let idx=index ">
+                
+                <app-delegate-form
+                    [delegates]="delegationForm.controls.delegates"
+                    [delegate]="delegate">          
+                </app-delegate-form>
+                
+                <!--  Add and remove Delegate buttons -->
+                <div class="row" style="margin-right:0px; ">
+                    <div class=" col-lg-push-8 col-lg-2">
+                        <button class="btn btn-danger btn-block " prevent-default (click)="removeDelegate(idx)" type='button' style=" margin-top:-30px; padding:30 0 30 0; padding-right:0; padding-left:0">Remove Delegate </button>
+                        </div>
+                    <div class=" col-lg-push-8 col-lg-2">
+                        <button class="btn btn-info btn-block " prevent-default (click)="addDelegate()"  type='button' style=" margin-left: -15px; margin-top:-30px" > Add Delegate </button>
+                    </div>
+                </div>            
+            </div>    
+        </div>
+    </div>
+    

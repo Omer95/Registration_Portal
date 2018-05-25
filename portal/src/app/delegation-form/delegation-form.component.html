@@ -1,0 +1,69 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Register</h4>
+                        <p class="category">Complete your registeration</p>
+                    </div>
+                    <div class="card-content">
+                        <form novalidate    [formGroup]="delegationForm"   (ngSubmit)="createObjectWithSet()">
+                            <div class="row">
+    
+                                
+                                <div class="col-md-3">
+                                    <div class="form-group form-black label-floating ">
+                                        <label class="control-label">Delegation ID</label>
+                                       <!-- <input type="text" class="form-control" disabled> -->
+                                            <input mdInput class="form-control" formControlName="delegationID"  type="text">
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-5">
+                                    <div class="form-group form-black label-floating ">
+                                        <label class="control-label">Delegation Name/Univeristy</label>
+                                        <input mdInput class="form-control" formControlName="delegationUniversity"  type="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-black label-floating ">
+                                        <label class="control-label">Number of delegates</label>
+                                        <input mdInput class="form-control" formControlName="numberOfDelegates" type="text" required>
+                                    </div>
+                                </div>
+                            </div>
+    
+                         
+    
+                            <button type="submit" class="btn btn-danger pull-right" [disabled]="!delegationForm.valid">
+                                    Submit
+                                </button>
+                                
+                                 <div class="clearfix"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+            
+            <div class="row" style="margin-bottom: 0; margin-top: -20; padding-top:-20;">
+            
+                <app-delegate-list
+                [delegationForm]="delegationForm"
+                [delegates]="delegationData.delegates">
+                </app-delegate-list> 
+             <div class="clearfix"></div>
+            </div>
+        
+            </div></div> 
+<!--
+<div class="delegation-form-state">
+
+<p>Current delegationForm State:</p>
+
+<pre>{{ delegationData | json }}</pre>
+
+</div>
+-->

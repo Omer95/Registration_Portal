@@ -1,0 +1,89 @@
+<div  [formGroup]="delegateForm">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header" data-background-color="blue">
+                <h4 class="title">Delegate Registeration</h4>
+                <p class="category">Complete your registeration</p>
+            </div>
+            <div class="card-content">
+                
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group form-black label-floating ">
+                                <label class="control-label">Delegate ID</label>
+                                <input mdInput class="form-control" formControlName="delegateId" type="text" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group form-black label-floating ">
+                                <label class="control-label">Head Delegate</label>
+                                <input mdInput class="form-control" formControlName="headDelegate" type=text >                                
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group form-black label-floating ">
+                                <label class="control-label">Committee Assigned(Not Yet)</label>
+                                <input mdInput class="form-control" formControlName="committeeAssigned"  type="text" disabled>        
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-black label-floating ">
+                                <label class="control-label">First Name</label>
+                                <input mdInput class="form-control" formControlName="firstName" type="text" required>                                   
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-black label-floating ">
+                                <label class="control-label">Last Name</label>
+                                <input mdInput class="form-control" formControlName="lastName" type="text" required>             
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group form-black label-floating ">
+                                <label class="control-label">Telephone Number</label>
+                                <input mdInput class="form-control" formControlName="telNum" type="text" >             
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group form-black label-floating ">
+                                <label class="control-label">Email</label>
+                                <input mdInput class="form-control" formControlName="email" type="text" >             
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group form-black label-floating ">
+                                <label class="control-label">Upload Photo</label>
+                                <input mdInput class="form-control" formControlName="photo" type="text" >             
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                                <div class="form-group form-black label-floating ">
+                                    <label class="control-label">Committee Preference 1</label>
+                                    <input mdInput class="form-control" formControlName="committeePreferenceOne" type="text" required>                                   
+                                </div>
+                            </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                                <div class="form-group form-black label-floating ">
+                                    <label class="control-label">Committee Preference 2</label>
+                                    <input mdInput class="form-control" formControlName="committeePreferenceTwo" type="text" required>                                   
+                                </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+              </div> 

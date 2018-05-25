@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+        <div class="col-lg-5 push-md-6" *ngIf="!(auth.user | async);">
+          <h3>Social Login</h3>
+            
+              <button (click)="signInWithGoogle()" class="btn btn-danger btn-social btn-google">
+                <i class="fa fa-google fa-lg"></i> Connect Google
+              </button>
+              <br><br>
+              <button (click)="signInWithFacebook()" class="btn btn-danger btn-social btn-facebook" >
+                <i class="fa fa-facebook fa-lg"></i> Connect Facebook
+              </button>
+              <br><br>
+              
+        </div>
+      
+  </div>
+</div>
+

@@ -1,0 +1,172 @@
+<div class="main-content">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header" data-background-color="red">
+                    <h4 class="title">Register</h4>
+                    <p class="category">Complete your registeration</p>
+                </div>
+                <div class="card-content">
+                    <form novalidate [formGroup]="delegationForm" (ngSubmit)="onCreateDelegates()">
+                        <div class="row">
+<!--
+FURTHER DOWN THE LANE THERE CAN BE AN ERROR BECAUSE I AM USING BOOTSTRAP INSTEAD OF MD FOR REACTIVE FORMS. IF SO SAMPLE CODE
+                                <md-input-container class="half-width">
+                                    <input mdInput formControlName="firstname" placeholder="First Name" type="text" required>            
+                                </md-input-container>
+
+
+-->
+                            
+                            <div class="col-md-3">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Delegation ID</label>
+                                   <!-- <input type="text" class="form-control" disabled> -->
+                                        <input mdInput class="form-control" formControlName="delegationID"  type="number">
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Delegation Name/Univeristy</label>
+                                    <input mdInput class="form-control" formControlName="delegationUniversity"  type="text" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Number of delegates</label>
+                                    <input mdInput class="form-control" formControlName="numberOfDelegates" type="number" required>
+                                </div>
+                            </div>
+                        </div>
+                   <!--     <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Country Assigned (disabled)</label>
+                                   <input mdInput class="form-control" formControlName="countryAssigned"  type="text" disabled>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Delegation Status (disabled)</label>
+                                   <input mdInput class="form-control" formControlName="delegationStatus"  type="text" disabled>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Payment Verified (disabled)</label>
+                                   <input mdInput class="form-control" formControlName="paymentVerified"  type=boolean disabled>
+                                </div>
+                            </div>
+                        </div> -->
+                     
+
+                        <button type="submit" class="btn btn-danger pull-right">Next</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+        <div class="row"  *ngIf="delegationButton" >
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header" data-background-color="blue">
+                    <h4 class="title">Delegate Registeration</h4>
+                    <p class="category">Complete your registeration</p>
+                </div>
+                <div class="card-content">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Delegate ID</label>
+                                    <input mdInput class="form-control" formControlName="delegateId" type="number" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Head Delegate</label>
+                                    <input mdInput class="form-control" formControlName="headDelegate" type=boolean required>                                
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Committee Assigned(Not Yet)</label>
+                                    <input mdInput class="form-control" formControlName="committeeAssigned"  type="text" disabled>        
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">First Name</label>
+                                    <input mdInput class="form-control" formControlName="firstName" type="text" required>                                   
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Last Name</label>
+                                    <input mdInput class="form-control" formControlName="lastName" type="text" required>             
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Telephone Number</label>
+                                    <input mdInput class="form-control" formControlName="telNum" type=number required>             
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Email</label>
+                                    <input mdInput class="form-control" formControlName="email" type=email required>             
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Upload Photo</label>
+                                    <input mdInput class="form-control" formControlName="photo" type="text" >             
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Committee Preference 1</label>
+                                        <input mdInput class="form-control" formControlName="committeePreferenceOne" type="text" required>                                   
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Committee Preference 2</label>
+                                        <input mdInput class="form-control" formControlName="committeePreferenceTwo" type="text" required>                                   
+                                    </div>
+                                
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success pull-right">Update Profile</button>
+                        <div class="clearfix"></div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>

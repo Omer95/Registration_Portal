@@ -1,0 +1,168 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">                        
+                    <div class="card" >
+
+                            <div class="card-header" data-background-color="red">
+                                <h4 class="title">Register</h4>
+                                <p class="category">Your Registeration Details</p>
+                            </div>
+                            <div class="card-content">
+                                    <div class="row">
+                                        
+                                        <div class="col-md-3">
+                                            <div class="form-group form-black label-floating">
+                                                <label class="control-label">Delegation ID</label>
+                                               <!-- <input type="text" class="form-control" disabled> -->
+                                               <h4>{{element.delegationID}}</h4>
+                                            </div>
+                                        </div>
+            
+                                        <div class="col-md-5">
+                                            <div class="form-group form-black label-floating ">
+                                                <label class="control-label">Delegation Name/Univeristy</label>
+                                                <h4>{{element.delegationUniversity}}</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-black label-floating ">
+                                                <label class="control-label">Number of delegates</label>
+                                                <h4>{{element.numberOfDelegates}}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                 
+            
+                                    <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <div class="" *ngFor="let d of delegatesArray">                           
+
+                        <div class="card">
+                                <div class="card-header" data-background-color="blue">
+                                    <h4 class="title">Delegate Registeration</h4>
+                                    <p class="category">{{d.firstName}} {{d.lastName}} </p>
+                                </div>
+                                <div class="card-content">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group form-black label-floating">
+                                                    <label class="control-label">Delegate ID</label>
+                                                    <h4>{{d.delegateId}}</h4>                                                        
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group form-black label-floating">
+                                                    <label class="control-label">Head Delegate</label>
+                                                    <h4>{{d.headDelegate}}</h4>                                                        
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group form-black label-floating ">
+                                                    <label class="control-label">Committee Assigned(Not Yet)</label>
+                                                    <h4>{{d.committeeAssigned}}</h4>                                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group form-black label-floating ">
+                                                    <label class="control-label">First Name</label>
+                                                    <h4>{{d.firstName}}</h4>                                                        
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-black label-floating ">
+                                                    <label class="control-label">Last Name</label>
+                                                    <h4>{{d.lastName}}</h4>                                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group form-black label-floating ">
+                                                    <label class="control-label">Telephone Number</label>
+                                                    <h4>{{d.telNum}}</h4>                                                        
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group form-black label-floating ">
+                                                    <label class="control-label">Email</label>
+                                                    <h4>{{d.email}}</h4>                                                        
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group form-black label-floating ">
+                                                    <label class="control-label">Upload Photo</label>
+                                                    <h4>{{d.photo}}</h4>                                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                
+                                                    <div class="form-group form-black label-floating">
+                                                        <label class="control-label">Committee Preference 1</label>
+                                                        <h4>{{d.committeePreferenceOne}}</h4>                                                        
+                                                    </div>
+                                                </div>
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                    <div class="form-group form-black label-floating ">
+                                                        <label class="control-label">Committee Preference 2</label>
+                                                        <h4>{{d.committeePreferenceTwo}}</h4>                                                        
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+                
+                                        <div class="clearfix"></div>
+                
+                                    </form>
+                                </div>
+                            </div>   
+           
+              
+                        </div>
+                      </div>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a href="#pablo">
+                            <img class="img" [src]="auth.currentUser.photoURL || 'https://api.adorable.io/avatars/109/fire.png'"/>
+                        </a>
+                    </div>
+    
+                    <div class="content">
+                        <h6 class="category text-gray">Head Delegate</h6>
+                        <h4 class="card-title">{{ auth.currentUserDisplayName }}</h4>
+                        <p class="card-content">
+                            Use this page to view information about your delegation, including information about individual delegates in your delegation.
+                        </p>
+                        <button (click)="logout()" class="btn btn-danger btn-social " >
+                            Log Out
+                          </button>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center ">
+                    <div class="col col-md-offset-2">
+                        <div class="">                     
+                             <button type="button" style="button-center" class="btn btn-danger btn-round" (click)="readObjectWithValueChanges()">Generate my delegation details</button>
+                      
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

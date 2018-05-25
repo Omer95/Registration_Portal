@@ -1,0 +1,23 @@
+.delegation-form {
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    border: 1px solid black;
+    margin-bottom: 0px;
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+.delegation-form-state {
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding: 10px;
+}
+
+
+
+input {
+   // width: 30%;
+    min-width: 200px;
+}
